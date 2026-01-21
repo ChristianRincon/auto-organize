@@ -10,11 +10,11 @@ const RULES_BY_TYPE = {
 
 const DEFAULT_FOLDER = 'Others';
 
-function getFolderByExtension(extension) {
-  const lowerExtension = extension.toLowerCase();
+function getFolderByExtension(ext) {
+  const lowerExt = ext.toLowerCase();
 
   for (const [folder, extensions] of Object.entries(RULES_BY_TYPE)) {
-    if (extensions.includes(lowerExtension)) {
+    if (extensions.includes(lowerExt)) {
       return folder;
     }
   }
@@ -22,4 +22,11 @@ function getFolderByExtension(extension) {
   return DEFAULT_FOLDER;
 }
 
-module.exports = { getFolderByExtension };
+function getAvailableTypes() {
+  return Object.keys(RULES_BY_TYPE).map(availableType => availableType.toLowerCase());
+}
+
+module.exports = {
+  getFolderByExtension,
+  getAvailableTypes
+};
