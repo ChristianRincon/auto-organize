@@ -1,7 +1,11 @@
 {
   "name": "auto-organize",
   "version": "1.0.0",
-  "description": "",
+  "description": "CLI to organize files in a directory based on their file types.",
+    "bin": {
+    "auto-organize": "./bin/auto-organize.js"
+  },
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
