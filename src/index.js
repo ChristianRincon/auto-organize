@@ -1,5 +1,4 @@
-const path = require('path');
-const { getFilesFromDirectory } = require('./utils/fsHelpers');
+const { organizeDirectory } = require('./organizer');
 
 function main() {
   const currentDir = process.cwd();
@@ -7,20 +6,9 @@ function main() {
   console.log('\nDirectorio analizado:\n');
   console.log(currentDir);
 
-  const files = getFilesFromDirectory(currentDir);
+  organizeDirectory(currentDir);
 
-  if (files.length === 0) {
-    console.log('\nNo se encontraron archivos para organizar.');
-    return;
-  }
-
-  console.log('\nArchivos encontrados:\n');
-
-  files.forEach(file => {
-    console.log(`- ${file.name}`);
-  });
-
-  console.log(`\nTotal: ${files.length} archivo(s)\n`);
+  console.log('\nOrganización finalizada\n');
 }
 
 main();
