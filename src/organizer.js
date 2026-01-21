@@ -7,7 +7,9 @@ const {
 
 const { getFolderByExtension } = require('./rules/byType');
 
-function organizeDirectory(baseDir) {
+function organizeDirectory(baseDir, options = {}) {
+  const { dryRun = false } = options;
+
   const files = getFilesFromDirectory(baseDir);
 
   files.forEach(file => {
@@ -16,8 +18,12 @@ function organizeDirectory(baseDir) {
     const targetFolderPath = path.join(baseDir, targetFolderName);
     const targetFilePath = path.join(targetFolderPath, file.name);
 
-    const createdFolder = ensureDirectoryExists(targetFolderPath);
+    if (dryRun) {
+      console.log(`${file.name} -> ${targetFolderName}/`);
+      return;
+    }
 
+    const createdFolder = ensureDirectoryExists(targetFolderPath);
     if (createdFolder) {
       console.log(`\nCarpeta creada: ${targetFolderName}/`);
     }
