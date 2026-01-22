@@ -42,7 +42,7 @@ Requires **Node.js >= 16**
 npx auto-organize
 ```
 
-### Option 2: Global Instalation (For regular use)
+### Option 2: Global Installation (For regular use)
 ```bash
 npm install -g auto-organize
 ```
