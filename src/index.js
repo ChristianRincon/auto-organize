@@ -14,32 +14,31 @@ function main() {
   }
 
   if (options.only && !availableTypes.includes(options.only)) {
-    console.error(`\n${options.only} es un tipo inválido para --only`);
-    console.error(`\nTipos válidos: ${availableTypes.join(', ')}`);
+    console.error(`\n${options.only} is not a valid type for --only`);
+    console.error(`\nValid types: ${availableTypes.join(', ')}`);
     process.exit(1);
   }
 
   if (options.exclude && !availableTypes.includes(options.exclude)) {
-    console.error(`\n${options.exclude} es un tipo inválido para --exclude`);
-    console.error(`\nTipos válidos: ${availableTypes.join(', ')}`);
+    console.error(`\n${options.exclude} is not a valid type for --exclude`);
+    console.error(`\nValid types: ${availableTypes.join(', ')}`);
     process.exit(1);
   }
 
   const currentDir = process.cwd();
 
-  console.log('\n| Directorio analizado |');
+  console.log('\n| Scanned directory |');
   console.log("-".repeat(currentDir.length + 2));
   console.log('|' + currentDir + '|');
   console.log("-".repeat(currentDir.length + 2));
 
   if (options.dryRun) {
-    console.log('\nModo simulación activado (dry-run)\n');
+    console.log('\nDry-run mode enabled\n');
   }
 
   organizeDirectory(currentDir, options);
 
-  console.log('\nOrganización finalizada\n');
-  
+  console.log('\nOrganization completed\n');
 }
 
 main();
