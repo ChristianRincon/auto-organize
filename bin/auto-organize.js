@@ -1,3 +1,10 @@
 #!/usr/bin/env node
+'use strict';
 
-require('../src/index');
+try {
+  require('../src/index');
+} catch (error) {
+  console.error('Error running auto-organize');
+  console.error(error.message);
+  process.exit(1);
+}
