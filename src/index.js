@@ -6,10 +6,23 @@ const { getAvailableTypes } = require('./rules/byType');
 function main() {
   const args = process.argv.slice(2);
   const options = parseArgs(args);
+  const availableTypes = getAvailableTypes();
 
   if (options.help) {
-    showHelp(getAvailableTypes());
+    showHelp(availableTypes);
     return;
+  }
+
+  if (options.only && !availableTypes.includes(options.only)) {
+    console.error(`\n${options.only} es un tipo inválido para --only`);
+    console.error(`\nTipos válidos: ${availableTypes.join(', ')}`);
+    process.exit(1);
+  }
+
+  if (options.exclude && !availableTypes.includes(options.exclude)) {
+    console.error(`\n${options.exclude} es un tipo inválido para --exclude`);
+    console.error(`\nTipos válidos: ${availableTypes.join(', ')}`);
+    process.exit(1);
   }
 
   const currentDir = process.cwd();
@@ -25,9 +38,8 @@ function main() {
 
   organizeDirectory(currentDir, options);
 
-  if (!options.dryRun) {
-    console.log('\nOrganización finalizada\n');
-  }
+  console.log('\nOrganización finalizada\n');
+  
 }
 
 main();
