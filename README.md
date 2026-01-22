@@ -1,59 +1,69 @@
 # Auto Organize CLI
 
-Una herramienta de línea de comandos (CLI) para **organizar automáticamente archivos** en cualquier carpeta del sistema.
+Read this in: **English** | [Spanish](README.es.md)
 
 <br>
 
-## ¿Qué problema resuelve?
-
-Cuando trabajamos con carpetas que acumulan archivos (Descargas, Escritorio, proyectos, etc), el orden se suele alterar y vemos:
-
-* Archivos mezclados por tipo.
-* Pérdida de tiempo clasificando los archivos manualmente.
-* Movemos o borramos archivos incorrectos.
+A command-line tool (CLI) to **automatically organize files** in any directory on your system.
 
 <br>
 
-**Auto Organize CLI** automatiza y corrige ese proceso.
+## What problem does it solve?
+
+When working with folders that accumulate files (Downloads, Desktop, projects, etc.), things usually get messy:
+
+* Files mixed by type.
+* Time wasted manually sorting files.
+* Risk of moving or deleting the wrong files.
 
 <br>
 
-## Características principales
+> **Auto Organize CLI** automates and fixes this process.
 
-* Organización automática por tipo de archivo (clasificacion por extensión).
-* Modo simulación (`--dry-run`) para previsualizar.
-* Filtros por tipo (`--only`, `--exclude`).
-* Funciona en **Windows, macOS y Linux**.
+<br>
 
+## Key Features
 
+* Automatic file organization by type (based on file extensions).
+* Simulation mode (`--dry-run`) to preview changes.
+* Type filters (`--only`, `--exclude`).
+* Works on **Windows, macOS, and Linux**.
 
-## Instalación
+<br>
 
+## Installation
+
+Requires **Node.js >= 16**
+
+> [Download Node here](https://nodejs.org/en/download)
+
+### Option 1: Without installation (For one-time use)
+```bash
+npx auto-organize
+```
+
+### Option 2: Global Instalation (For regular use)
 ```bash
 npm install -g auto-organize
 ```
 
-Requiere **Node.js >= 16**
-
-> Descarga [Node aquí](https://nodejs.org/es/download) 
-
 <br>
 
-## Uso básico
+## Basic Usage
 
-Ubicate en cualquier carpeta del sistema. Por ejemplo '/descargas'
+Navigate to any directory on your system. For example:
 
 ```bash
-cd users/descargas
+cd users/downloads
 ```
 
-y ejecuta:
+Then run:
 
 ```bash
 auto-organize
 ```
 
-Esto, dependiendo del tipo de archivos presentes, creará carpetas como:
+Depending on the files present, it will create folders such as:
 
 ```txt
 Images/
@@ -64,33 +74,47 @@ Archives/
 Others/
 ```
 
-y clasificará los archivos en la carpeta correspondiente.
+And move files into their corresponding folders.
+
+```txt
+photo.jpg -> Images/
+
+document.pdf -> Documents/
+
+song.mp3 -> Audio/
+
+video.mp4 -> Video/
+
+archive.rar -> Archives/
+
+config.json -> Others/
+```
 
 <br>
 
-## Modo simulación (Dry Run)
+## Simulation Mode (Dry Run)
 
-Antes de ejecutar cambios reales, se puede previsualizar si la clasificación es correcta:
+Preview the organization before applying real changes:
 
 ```bash
 auto-organize --dry-run
 ```
 
-Salida de ejemplo:
+Example output:
 
 ```txt
-foto.jpg -> Images/
-contrato.pdf -> Documents/
+photo.jpg -> Images/
+contract.pdf -> Documents/
 song.mp3 -> Audio/
 ```
 
 <br>
 
-## Configuraciones disponibles (flags)
+## Available Flags
 
 ### `--only <type>`
 
-Organiza **solo** un tipo específico de archivo.
+Organize **only** a specific file type.
 
 ```bash
 auto-organize --only images
@@ -100,7 +124,7 @@ auto-organize --only images
 
 ### `--exclude <type>`
 
-Excluye un tipo de archivo de la organización.
+Exclude a specific file type from organization.
 
 ```bash
 auto-organize --exclude archives
@@ -110,7 +134,7 @@ auto-organize --exclude archives
 
 ### `--help`
 
-Muestra una guía completa y los tipos disponibles.
+Display the help guide and available types.
 
 ```bash
 auto-organize --help
@@ -118,7 +142,7 @@ auto-organize --help
 
 <br>
 
-## Tipos soportados
+## Supported Types
 
 * images
 * documents
@@ -131,33 +155,34 @@ auto-organize --help
 
 <br>
 
-## Casos típicos de uso
+## Common Use Cases
 
-* Organizar la carpeta de Descargas.
-* Limpieza rápida del Escritorio.
-* Automatizar la clasificación de archivos de un proyecto (por ejemplo la carpeta '/public').
-
-<br>
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-1. Fork al proyecto
-2. Crea una rama con tu feature (`git checkout -b feature/{tu-feature}`)
-3. Commit tus cambios (`git commit -m 'Add some {tu-feature}'`)
-4. Push a la rama (`git push origin feature/{tu-feature}`)
-5. Abre un Pull Request
+* Organizing the Downloads folder
+* Quick Desktop cleanup
+* Automatically classifying project files (e.g. a `/public` directory)
 
 <br>
 
-## Licencia
+## Contributing
+
+Contributions are welcome:
+
+1. Fork the project.
+2. Create a feature branch: `git checkout -b feature/{your-feature}`
+3. Commit your changes: `git commit -m 'Add your feature'`
+4. Push the branch: `git push origin feature/{your-feature}`
+5. Open a pull request.
+
+<br>
+
+## License
 
 * MIT
 
+<br>
 
-## Autor
+## Author
 
 * LinkedIn: https://www.linkedin.com/in/christian-math%C3%ADas-rinc%C3%B3n-037a90297/
 
 * GitHub: https://github.com/ChristianRincon
-
