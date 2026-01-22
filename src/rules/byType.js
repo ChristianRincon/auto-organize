@@ -10,11 +10,11 @@ const RULES_BY_TYPE = {
 
 const DEFAULT_FOLDER = 'Others';
 
-function getFolderByExtension(ext) {
-  const lowerExt = ext.toLowerCase();
+function getFolderByExtension(extension) {
+  const lowerExtension = extension.toLowerCase();
 
   for (const [folder, extensions] of Object.entries(RULES_BY_TYPE)) {
-    if (extensions.includes(lowerExt)) {
+    if (extensions.includes(lowerExtension)) {
       return folder;
     }
   }
