@@ -24,7 +24,7 @@ function organizeDirectory(baseDir, options = {}) {
     }
 
     const createdFolder = ensureDirectoryExists(targetFolderPath);
-    if (createdFolder) console.log(`\nCarpeta creada: ${folderByExtension}/`);
+    if (createdFolder) console.log(`\nFolder created: ${folderByExtension}/`);
 
     moveFile(file.path, targetFilePath);
     console.log(`${file.name} -> ${folderByExtension}/`);
