@@ -1,9 +1,9 @@
 function parseArgs(args) {
 
   if (!args[0].startsWith('--')) {
-    throw new Error(`'${args[0]}' es inválido. Ejecute 'auto-organize --help' para ver las opciones disponibles.`);
+    throw new Error(`\n'${args[0]}' es inválido. Ejecute 'auto-organize --help' para ver las opciones disponibles.`);
   }
-  
+
   const options = {
     dryRun: false,
     only: null,
@@ -15,7 +15,7 @@ function parseArgs(args) {
 
   args.forEach((arg, index) => {
     if (arg.startsWith('--') && !allowedFlags.includes(arg)) {
-      throw new Error(`Flag '${arg}' desconocida. Ejecute 'auto-organize --help' para ver las flags disponibles.`);
+      throw new Error(`\nFlag '${arg}' desconocida. Ejecute 'auto-organize --help' para ver las flags disponibles.`);
     }
 
     if (arg === '--dry-run') {
