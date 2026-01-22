@@ -6,7 +6,13 @@ function parseArgs(args) {
     help: false
   };
 
+  const allowedFlags = ['--dry-run', '--only', '--exclude', '--help'];
+
   args.forEach((arg, index) => {
+    if (arg.startsWith('--') && !allowedFlags.includes(arg)) {
+      throw new Error(`Flag '${arg}' desconocida. Ejecute 'auto-organize --help' para ver las opciones disponibles.`);
+    }
+
     if (arg === '--dry-run') options.dryRun = true;
     if (arg === '--help') options.help = true;
 
