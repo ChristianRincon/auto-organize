@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 function getFilesFromDirectory(dirPath) {
   const items = fs.readdirSync(dirPath);
@@ -30,8 +30,4 @@ function moveFile(sourcePath, targetPath) {
   fs.renameSync(sourcePath, targetPath);
 }
 
-module.exports = {
-  getFilesFromDirectory,
-  ensureDirectoryExists,
-  moveFile
-};
+export { getFilesFromDirectory, ensureDirectoryExists, moveFile };
