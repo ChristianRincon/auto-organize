@@ -25,7 +25,7 @@ When working with folders that accumulate files (Downloads, Desktop, projects, e
 ## Key Features
 
 * Automatic file organization by type (based on file extensions).
-* Simulation mode (`--dry-run`) to preview changes.
+* Simulation mode (`--preview`) to preview changes.
 * Type filters (`--only`, `--exclude`).
 * Works on **Windows, macOS, and Linux**.
 
@@ -92,20 +92,25 @@ config.json -> Others/
 
 <br>
 
-## Simulation Mode (Dry Run)
+## Simulation Mode (preview)
 
 Preview the organization before applying real changes:
 
 ```bash
-auto-organize --dry-run
+auto-organize --preview
 ```
 
 Example output:
 
 ```txt
-photo.jpg -> Images/
-contract.pdf -> Documents/
-song.mp3 -> Audio/
+Images/
+    photo.jpg
+
+Documents/
+    contract.pdf 
+
+Audio/    
+    song.mp3
 ```
 
 <br>
