@@ -1,49 +1,72 @@
 import chalk from "chalk";
 
-function parseArgs(args) {
-  const options = {
-    dryRun: false,
+function parseArgs(cliArguments) {
+  const cliFlags = {
+    preview: false,
     only: null,
     exclude: null,
     help: false
   };
 
-  if (args.length === 0) {
-    return options;
+  if (cliArguments.length === 0) {
+    return cliFlags;
   }
 
-  const allowedFlags = ['--dry-run', '--only', '--exclude', '--help'];
+  const allowedFlags = [
+    '--preview', '-p',
+    '--only', '-o',
+    '--exclude', '-e',
+    '--help', '-h'
+  ];
 
-  args.forEach((arg, index) => {
-    if (!arg.startsWith('--')) {
-      throw new Error(`\n'${chalk.red(arg)}' is invalid. Run ${chalk.green('auto-organize --help')} to see available options.`);
+  for (let i = 0; i < cliArguments.length; i++) {
+    const cliArgument = cliArguments[i];
+
+    if (!cliArgument.startsWith('-')) {
+      throw new Error(`\n'${chalk.red(cliArgument)}' is invalid. Run ${chalk.green('auto-organize --help')} to see available options.`);
     }
 
-    if (!allowedFlags.includes(arg)) {
-      throw new Error(`\nUnknown flag '${chalk.red(arg)}'. Run ${chalk.green('auto-organize --help')} to see available flags.`);
+    if (!allowedFlags.includes(cliArgument)) {
+      throw new Error(`\nUnknown flag '${chalk.red(cliArgument)}'. Run ${chalk.green('auto-organize --help')} to see available flags.`);
     }
 
-    if (arg === '--dry-run') options.dryRun = true;
-    if (arg === '--help') options.help = true;
+    if (cliArgument === '--preview' || cliArgument === '-p') {
+      cliFlags.preview = true;
+      continue;
+    }
 
-    if (arg === '--only') {
-      const onlyValue = args[index + 1];
-      if (!onlyValue || onlyValue.startsWith('--')) {
+    if (cliArgument === '--help' || cliArgument === '-h') {
+      cliFlags.help = true;
+      continue;
+    }
+
+
+    if (cliArgument === '--only' || cliArgument === '-o') {
+      const onlyFlagArgument = cliArguments[i + 1];
+
+      if (!onlyFlagArgument || onlyFlagArgument.startsWith('-')) {
         throw new Error(chalk.red(`\n--only requires a valid type.`));
       }
-      options.only = onlyValue.toLowerCase();
+
+      cliFlags.only = onlyFlagArgument.toLowerCase();
+      i++;
+      continue;
     }
 
-    if (arg === '--exclude') {
-      const excludeValue = args[index + 1];
-      if (!excludeValue || excludeValue.startsWith('--')) {
+    if (cliArgument === '--exclude' || cliArgument === '-e') {
+      const excludeFlagArgument = cliArguments[i + 1];
+
+      if (!excludeFlagArgument || excludeFlagArgument.startsWith('-')) {
         throw new Error(chalk.red(`\n--exclude requires a valid type.`));
       }
-      options.exclude = excludeValue.toLowerCase();
-    }
-  });
 
-  return options;
+      cliFlags.exclude = excludeFlagArgument.toLowerCase();
+      i++;
+      continue;
+    }
+  }
+
+  return cliFlags;
 }
 
 export { parseArgs };
