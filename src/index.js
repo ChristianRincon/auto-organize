@@ -5,42 +5,44 @@ import { getAvailableTypes } from './rules/byType.js';
 import chalk from 'chalk';
 
 function main() {
-  const args = process.argv.slice(2);
-  const options = parseArgs(args);
+  const cliArguments = process.argv.slice(2);
+  const cliFlags = parseArgs(cliArguments);
   const availableTypes = getAvailableTypes();
 
-  if (options.help) {
+  if (cliFlags.help) {
     showHelp(availableTypes);
     return;
   }
 
-  if (options.only && !availableTypes.includes(options.only)) {
-    console.error(`\n${options.only} is not a valid type for --only`);
+  if (cliFlags.only && !availableTypes.includes(cliFlags.only)) {
+    console.error(`\n${cliFlags.only} is not a valid type for --only`);
     console.error(`\nValid types: ${availableTypes.join(', ')}`);
     process.exit(1);
   }
 
-  if (options.exclude && !availableTypes.includes(options.exclude)) {
-    console.error(`\n${options.exclude} is not a valid type for --exclude`);
+  if (cliFlags.exclude && !availableTypes.includes(cliFlags.exclude)) {
+    console.error(`\n${cliFlags.exclude} is not a valid type for --exclude`);
     console.error(`\nValid types: ${availableTypes.join(', ')}`);
     process.exit(1);
   }
 
   const currentDir = process.cwd();
   
-  const scannedText = 'SCANNED DIRECTORY';
-  const scannedTextMargin = (currentDir.length - scannedText.length) / 2;
-  console.log(chalk.yellow("\n" + " ".repeat(scannedTextMargin + 2) + scannedText + "\n"));
+  const scannedDirectoryText = 'SCANNED DIRECTORY';
+  const scannedTextMargin = (currentDir.length - scannedDirectoryText.length) / 2;
+  console.log(chalk.yellow("\n" + " ".repeat(scannedTextMargin + 2) + scannedDirectoryText + "\n"));
   console.log(chalk.yellow('o ') + currentDir + chalk.yellow(' o'));
 
-  if (options.dryRun) {
-    console.log("\n" + chalk.blueBright("o DRY-RUN MODE ENABLED"));
+  if (cliFlags.preview) {
+    const previewModeText = 'PREVIEW MODE';
+    const previewTextMargin = (scannedDirectoryText.length - previewModeText.length) / 2;
+    console.log("\n" + " ".repeat(scannedTextMargin + previewTextMargin + 1) + chalk.blueBright(previewModeText));
   }
 
-  organizeDirectory(currentDir, options);
+  organizeDirectory(currentDir, cliFlags);
 
-  if(!options.dryRun){
-    console.log(chalk.green('\nOrganization completed\n'));
+  if(!cliFlags.preview){
+    console.log('\nOrganization completed\n');
   }
 }
 
