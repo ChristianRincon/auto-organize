@@ -5,18 +5,30 @@
   "bin": {
     "auto-organize": "./bin/auto-organize.js"
   },
-  "type": "commonjs",
-  "keywords": [  
+  "type": "module",
+  "keywords": [
     "cli",
     "automation",
     "file-organizer",
+    "file-management",
+    "organize",
+    "sort",
+    "cleanup",
+    "files",
+    "folders",
+    "directories",
+    "command-line",
+    "terminal",
     "nodejs",
     "filesystem",
     "productivity"
-],
+  ],
   "author": {
     "name": "Christian Mathías Rincón",
     "url": "https://www.linkedin.com/in/christian-math%C3%ADas-rinc%C3%B3n-037a90297/"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.6.2"
+  }
 }
