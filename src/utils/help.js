@@ -2,19 +2,19 @@ function showHelp(availableTypes) {
   console.log(`
 Auto Organize CLI
 
-Uso:
-  auto-organize [opciones]
+Usage:
+  auto-organize [options]
 
-Opciones:
-  --dry-run           Muestra un preview sin hacer cambios
-  --only <type>       Organiza solo un tipo específico
-  --exclude <type>    Excluye un tipo de la organización
-  --help              Muestra esta ayuda
+Options:
+  --dry-run           Show a preview without making changes
+  --only <type>       Organize only a specific file type
+  --exclude <type>    Exclude a file type from organization
+  --help              Show this help message
 
-Tipos disponibles:
+Available types:
   ${availableTypes.join(', ')}
 
-Ejemplos:
+Examples:
   auto-organize --dry-run
   auto-organize --only images
   auto-organize --exclude archives
