@@ -1,8 +1,7 @@
 #!/usr/bin/env node
-'use strict';
 
 try {
-  require('../src/index');
+  await import('../src/index.js');
 } catch (error) {
   console.error('Error running auto-organize');
   console.error(error.message);

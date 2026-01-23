@@ -21,4 +21,4 @@ Examples:
 `);
 }
 
-module.exports = { showHelp };
+export { showHelp };

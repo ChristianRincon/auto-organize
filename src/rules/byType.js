@@ -26,7 +26,4 @@ function getAvailableTypes() {
   return Object.keys(RULES_BY_TYPE).map(availableType => availableType.toLowerCase());
 }
 
-module.exports = {
-  getFolderByExtension,
-  getAvailableTypes
-};
+export { getFolderByExtension, getAvailableTypes };
