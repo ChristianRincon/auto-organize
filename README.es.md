@@ -25,7 +25,7 @@ Cuando trabajamos con carpetas que acumulan archivos (Descargas, Escritorio, pro
 ## Características principales
 
 * Organización automática por tipo de archivo (clasificacion por extensión).
-* Modo simulación (`--dry-run`) para previsualizar.
+* Modo simulación (`--preview`) para previsualizar.
 * Filtros por tipo (`--only`, `--exclude`).
 * Funciona en **Windows, macOS y Linux**.
 
@@ -92,20 +92,25 @@ config.json -> Others/
 
 <br>
 
-## Modo simulación (Dry Run)
+## Modo simulación (preview)
 
 Antes de ejecutar cambios reales, se puede previsualizar si la clasificación es correcta:
 
 ```bash
-auto-organize --dry-run
+auto-organize --preview
 ```
 
 Salida de ejemplo:
 
 ```txt
-foto.jpg -> Images/
-contrato.pdf -> Documents/
-song.mp3 -> Audio/
+Images/
+    foto.jpg
+
+Documents/
+    contrato.pdf
+
+Audio/
+    song.mp3
 ```
 
 <br>
