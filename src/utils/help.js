@@ -1,24 +1,28 @@
+import chalk from "chalk";
+
 function showHelp(availableTypes) {
   console.log(`
-Auto Organize CLI
+    ${chalk.blueBright('Auto Organize CLI Help Menu')}
 
-Usage:
-  auto-organize [options]
+    Usage:
+      auto-organize [${chalk.green('options')}]
 
-Options:
-  --dry-run           Show a preview without making changes
-  --only <type>       Organize only a specific file type
-  --exclude <type>    Exclude a file type from organization
-  --help              Show this help message
+    Options:
+      ${chalk.green('--preview,  -p')}           Show a preview without making changes
+      ${chalk.green('--only,     -o <type>')}    Organize only a specific file type
+      ${chalk.green('--exclude,  -e <type>')}    Exclude a file type from organization
+      ${chalk.green('--help,     -h')}           Show this help message
 
-Available types:
-  ${availableTypes.join(', ')}
+    Available types:
+      ${chalk.yellow(availableTypes.join(', '))}
 
-Examples:
-  auto-organize --dry-run
-  auto-organize --only images
-  auto-organize --exclude archives
-`);
+    Examples:
+      auto-organize ${chalk.green('--preview')} || auto-organize ${chalk.green('-p')}
+
+      auto-organize ${chalk.green('--only')} ${chalk.yellow('images')} || auto-organize ${chalk.green('-o')} ${chalk.yellow('images')}
+      
+      auto-organize ${chalk.green('--exclude')} ${chalk.yellow('archives')} || auto-organize ${chalk.green('-e')} ${chalk.yellow('archives')}
+  `);
 }
 
 export { showHelp };
