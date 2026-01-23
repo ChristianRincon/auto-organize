@@ -1,7 +1,8 @@
-const { organizeDirectory } = require('./organizer');
-const { parseArgs } = require('./utils/parseArgs');
-const { showHelp } = require('./utils/help');
-const { getAvailableTypes } = require('./rules/byType');
+import { organizeDirectory } from './organizer.js';
+import { parseArgs } from './utils/parseArgs.js';
+import { showHelp } from './utils/help.js';
+import { getAvailableTypes } from './rules/byType.js';
+import chalk from 'chalk';
 
 function main() {
   const args = process.argv.slice(2);
@@ -26,19 +27,21 @@ function main() {
   }
 
   const currentDir = process.cwd();
-
-  console.log('\n| Scanned directory |');
-  console.log("-".repeat(currentDir.length + 2));
-  console.log('|' + currentDir + '|');
-  console.log("-".repeat(currentDir.length + 2));
+  
+  const scannedText = 'SCANNED DIRECTORY';
+  const scannedTextMargin = (currentDir.length - scannedText.length) / 2;
+  console.log(chalk.yellow("\n" + " ".repeat(scannedTextMargin + 2) + scannedText + "\n"));
+  console.log(chalk.yellow('o ') + currentDir + chalk.yellow(' o'));
 
   if (options.dryRun) {
-    console.log('\nDry-run mode enabled\n');
+    console.log("\n" + chalk.blueBright("o DRY-RUN MODE ENABLED"));
   }
 
   organizeDirectory(currentDir, options);
 
-  console.log('\nOrganization completed\n');
+  if(!options.dryRun){
+    console.log(chalk.green('\nOrganization completed\n'));
+  }
 }
 
 main();
