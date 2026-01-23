@@ -15,14 +15,14 @@ function main() {
   }
 
   if (cliFlags.only && !availableTypes.includes(cliFlags.only)) {
-    console.error(`\n${cliFlags.only} is not a valid type for --only`);
-    console.error(`\nValid types: ${availableTypes.join(', ')}`);
+    console.error(`\n'${chalk.red(cliFlags.only)}' is not a valid type for ${chalk.green('--only')}`);
+    console.error(`\nValid types: ${chalk.yellow(availableTypes.join(', '))}`);
     process.exit(1);
   }
 
   if (cliFlags.exclude && !availableTypes.includes(cliFlags.exclude)) {
-    console.error(`\n${cliFlags.exclude} is not a valid type for --exclude`);
-    console.error(`\nValid types: ${availableTypes.join(', ')}`);
+    console.error(`\n'${chalk.red(cliFlags.exclude)}' is not a valid type for ${chalk.green('--exclude')}`);
+    console.error(`\nValid types: ${chalk.yellow(availableTypes.join(', '))}`);
     process.exit(1);
   }
 
