@@ -1,6 +1,6 @@
 import path from 'path';
 import { getFilesFromDirectory, ensureDirectoryExists, moveFile } from './utils/fsHelpers.js';
-import { getFolderByExtension } from './rules/byType.js';
+import { getFolderNameByExtension } from './rules/byType.js';
 import chalk from 'chalk';
 
 function organizeDirectory(baseDir, cliFlags = {}) {
@@ -13,7 +13,7 @@ function organizeDirectory(baseDir, cliFlags = {}) {
 
   files.forEach(file => {
     const extension = path.extname(file.name);
-    const folderByExtension = getFolderByExtension(extension);
+    const folderByExtension = getFolderNameByExtension(extension);
     const folderLower = folderByExtension.toLowerCase();
 
     if (only && folderLower !== only) return;
@@ -35,19 +35,19 @@ function organizeDirectory(baseDir, cliFlags = {}) {
   });
   
   if (createdFolder) {
-    console.log(`\nFolder(s) created`);
+    console.log(`\n${chalk.green("Folder(s) created")}`);
   }
 
   Object.entries(filesSummary).forEach(([folder, files]) => {
-    console.log(`\n${folder}/`);
+    console.log(`\n${chalk.green("o ") + folder}/`);
 
     files.forEach(file => {
-      const FILE_TAB = 2;
-      const fileName = `${" ".repeat(FILE_TAB)}${file}`;
+      const FILE_TAB = 4;
+      const fileName = `${" ".repeat(FILE_TAB)} ${chalk.green("• ")}${file}`;
       if(preview){
         console.log(chalk.blueBright(fileName));
       }else{
-        console.log(chalk.green(fileName));
+        console.log(fileName);
       }
     });
 

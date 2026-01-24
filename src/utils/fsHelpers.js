@@ -2,20 +2,20 @@ import fs from 'fs';
 import path from 'path';
 
 function getFilesFromDirectory(dirPath) {
-  const items = fs.readdirSync(dirPath);
+  const dirPathList = fs.readdirSync(dirPath);
 
-  return items
-    .map(item => {
-      const fullPath = path.join(dirPath, item);
+  return dirPathList
+    .map(dirPathItemName => {
+      const fullPath = path.join(dirPath, dirPathItemName);
       const stats = fs.statSync(fullPath);
 
       return {
-        name: item,
+        name: dirPathItemName,
         path: fullPath,
         isFile: stats.isFile()
       };
     })
-    .filter(item => item.isFile);
+    .filter(dirPathItemName => dirPathItemName.isFile);
 }
 
 function ensureDirectoryExists(dirPath) {
