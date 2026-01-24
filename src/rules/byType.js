@@ -8,22 +8,22 @@ const RULES_BY_TYPE = {
   Video: ['.mp4', '.mov', '.avi', '.mkv', '.webm', '.wmv', '.flv']
 };
 
-const DEFAULT_FOLDER = 'Others';
+const DEFAULT_FOLDER_NAME = 'Others';
 
-function getFolderByExtension(extension) {
-  const lowerExtension = extension.toLowerCase();
+function getFolderNameByExtension(extension) {
+  const extensionToLowerCase = extension.toLowerCase();
 
-  for (const [folder, extensions] of Object.entries(RULES_BY_TYPE)) {
-    if (extensions.includes(lowerExtension)) {
-      return folder;
+  for (const [folderName, extensionsList] of Object.entries(RULES_BY_TYPE)) {
+    if (extensionsList.includes(extensionToLowerCase)) {
+      return folderName;
     }
   }
 
-  return DEFAULT_FOLDER;
+  return DEFAULT_FOLDER_NAME;
 }
 
 function getAvailableTypes() {
   return Object.keys(RULES_BY_TYPE).map(availableType => availableType.toLowerCase());
 }
 
-export { getFolderByExtension, getAvailableTypes };
+export { getFolderNameByExtension, getAvailableTypes };

@@ -1,6 +1,6 @@
 import path from 'path';
 import { getFilesFromDirectory, ensureDirectoryExists, moveFile } from './utils/fsHelpers.js';
-import { getFolderByExtension } from './rules/byType.js';
+import { getFolderNameByExtension } from './rules/byType.js';
 import chalk from 'chalk';
 
 function organizeDirectory(baseDir, cliFlags = {}) {
@@ -13,7 +13,7 @@ function organizeDirectory(baseDir, cliFlags = {}) {
 
   files.forEach(file => {
     const extension = path.extname(file.name);
-    const folderByExtension = getFolderByExtension(extension);
+    const folderByExtension = getFolderNameByExtension(extension);
     const folderLower = folderByExtension.toLowerCase();
 
     if (only && folderLower !== only) return;
