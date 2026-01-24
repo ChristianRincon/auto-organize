@@ -30,8 +30,10 @@ function main() {
   
   const scannedDirectoryText = 'SCANNED DIRECTORY';
   const scannedTextMargin = (currentDir.length - scannedDirectoryText.length) / 2;
-  console.log(chalk.yellow("\n" + " ".repeat(scannedTextMargin + 2) + scannedDirectoryText + "\n"));
-  console.log(chalk.yellow('o ') + currentDir + chalk.yellow(' o'));
+  console.log(chalk.yellow("\n" + " ".repeat(scannedTextMargin + 2) + chalk(scannedDirectoryText) + "\n"));
+  console.log(chalk.yellow("o".repeat(currentDir.length + 8)))
+  console.log(chalk.yellow('|o- ') + currentDir + chalk.yellow(' -o|'));
+  console.log(chalk.yellow("o".repeat(currentDir.length + 8)))
 
   if (cliFlags.preview) {
     const previewModeText = 'PREVIEW MODE';
@@ -42,7 +44,10 @@ function main() {
   organizeDirectory(currentDir, cliFlags);
 
   if(!cliFlags.preview){
-    console.log('\nOrganization completed\n');
+    const organizationCompletedText = 'ORGANIZATION COMPLETED';
+    console.log("\n" +chalk.green("o").repeat(organizationCompletedText.length + 8));
+    console.log(chalk.green('|o- ') + organizationCompletedText + chalk.green(' -o|'));
+    console.log(chalk.green("o").repeat(organizationCompletedText.length + 8));
   }
 }
 

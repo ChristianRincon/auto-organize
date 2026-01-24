@@ -35,19 +35,19 @@ function organizeDirectory(baseDir, cliFlags = {}) {
   });
   
   if (createdFolder) {
-    console.log(`\nFolder(s) created`);
+    console.log(`\n${chalk.green("Folder(s) created")}`);
   }
 
   Object.entries(filesSummary).forEach(([folder, files]) => {
-    console.log(`\n${folder}/`);
+    console.log(`\n${chalk.green("o ") + folder}/`);
 
     files.forEach(file => {
-      const FILE_TAB = 2;
-      const fileName = `${" ".repeat(FILE_TAB)}${file}`;
+      const FILE_TAB = 4;
+      const fileName = `${" ".repeat(FILE_TAB)} ${chalk.green("• ")}${file}`;
       if(preview){
         console.log(chalk.blueBright(fileName));
       }else{
-        console.log(chalk.green(fileName));
+        console.log(fileName);
       }
     });
 
