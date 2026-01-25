@@ -1,6 +1,6 @@
 import { organizeDirectory } from './organizer.js';
 import { parseArgs } from './utils/parseArgs.js';
-import { showHelp } from './utils/help.js';
+import { showHelp } from './utils/helpMenu.js';
 import { getAvailableTypes } from './rules/byType.js';
 import chalk from 'chalk';
 
