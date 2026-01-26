@@ -10,7 +10,7 @@ const RULES_BY_TYPE = {
 
 const DEFAULT_FOLDER_NAME = 'Others';
 
-function getFolderNameByExtension(extension) {
+function getFolderNameByExtensionType(extension) {
   const extensionToLowerCase = extension.toLowerCase();
 
   for (const [folderName, extensionsList] of Object.entries(RULES_BY_TYPE)) {
@@ -26,4 +26,4 @@ function getAvailableTypes() {
   return Object.keys(RULES_BY_TYPE).map(availableType => availableType.toLowerCase());
 }
 
-export { getFolderNameByExtension, getAvailableTypes };
+export { getFolderNameByExtensionType, getAvailableTypes };
