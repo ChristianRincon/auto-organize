@@ -1,4 +1,5 @@
-import { organizeDirectory } from './organizer.js';
+import { organizeDirectory } from './organizer/organizeDirectory.js';
+import { renderFoldersSummary } from './cli/renderSummary.js';
 import { parseArgs } from './utils/parseArgs.js';
 import { showHelp } from './utils/helpMenu.js';
 import { getAvailableTypes } from './rules/byType.js';
@@ -41,14 +42,9 @@ function main() {
     console.log("\n" + " ".repeat(scannedTextMargin + previewTextMargin + 1) + chalk.blueBright(previewModeText));
   }
 
-  organizeDirectory(currentDir, cliFlags);
+  const summary = organizeDirectory(currentDir, cliFlags);
+  renderFoldersSummary(summary);
 
-  if(!cliFlags.preview){
-    const organizationCompletedText = 'ORGANIZATION COMPLETED';
-    console.log("\n" +chalk.green("o").repeat(organizationCompletedText.length + 8));
-    console.log(chalk.green('|o- ') + organizationCompletedText + chalk.green(' -o|'));
-    console.log(chalk.green("o").repeat(organizationCompletedText.length + 8));
-  }
 }
 
 main();
