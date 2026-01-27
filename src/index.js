@@ -18,6 +18,9 @@ function main() {
     }
 
     const summary = organizeDirectory(currentDir, cliFlags);
+
+    if(!summary) return;
+    
     renderFoldersSummary(summary);
 
   } catch (error) {
