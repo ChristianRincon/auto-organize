@@ -1,3 +1,7 @@
+![Auto Organize CLI Banner](assets/banner.png)
+
+<br>
+
 # Auto Organize CLI
 
 Leer en: [Inglés](README.md) | **Español** 
@@ -24,10 +28,11 @@ Cuando trabajamos con carpetas que acumulan archivos (Descargas, Escritorio, pro
 
 ## Características principales
 
-* Organización automática por tipo de archivo (clasificacion por extensión).
+* Organización automática por tipo de archivo (clasificación por extensión).
 * Modo simulación (`--preview`) para previsualizar.
 * Filtros por tipo (`--only`, `--exclude`).
-* Funciona en **Windows, macOS y Linux**.
+* **Solo mueve archivos — nunca los elimina.**
+* Probado en **Windows** y **Linux** (Se espera compatibilidad con **macOS** gracias al soporte multiplataforma de **Node.js**)
 
 <br>
 
@@ -54,7 +59,7 @@ npm install -g auto-organize
 Ubicate en cualquier carpeta del sistema. Por ejemplo '/descargas'
 
 ```bash
-cd users/descargas
+cd /users/descargas
 ```
 
 y ejecuta:
@@ -110,7 +115,7 @@ Documents/
     contrato.pdf
 
 Audio/
-    song.mp3
+    cancion.mp3
 ```
 
 <br>

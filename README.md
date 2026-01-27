@@ -1,3 +1,7 @@
+![Auto Organize CLI Banner](assets/banner.png)
+
+<br>
+
 # Auto Organize CLI
 
 Read this in: **English** | [Spanish](README.es.md)
@@ -27,7 +31,9 @@ When working with folders that accumulate files (Downloads, Desktop, projects, e
 * Automatic file organization by type (based on file extensions).
 * Simulation mode (`--preview`) to preview changes.
 * Type filters (`--only`, `--exclude`).
-* Works on **Windows, macOS, and Linux**.
+* **Only moves files — never deletes them.**
+* Tested on **Windows** and **Linux** (**macOS** compatibility is expected due to **Node.js** cross-platform support).
+
 
 <br>
 
@@ -54,7 +60,7 @@ npm install -g auto-organize
 Navigate to any directory on your system. For example:
 
 ```bash
-cd users/downloads
+cd /users/downloads
 ```
 
 Then run:

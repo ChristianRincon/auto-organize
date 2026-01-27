@@ -1,11 +1,16 @@
 {
   "name": "auto-organize",
   "version": "1.0.0",
-  "description": "CLI to organize files in a directory based on their file types.",
+  "description": "CLI tool to organize files in a directory based on their file types.",
+  "main": "./bin/auto-organize.js",
   "bin": {
     "auto-organize": "./bin/auto-organize.js"
   },
   "type": "module",
+  "files": [
+    "bin",
+    "src"
+  ],
   "keywords": [
     "cli",
     "automation",
@@ -28,6 +33,17 @@
     "url": "https://www.linkedin.com/in/christian-math%C3%ADas-rinc%C3%B3n-037a90297/"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristianRincon/auto-organize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChristianRincon/auto-organize/issues"
+  },
+  "homepage": "https://github.com/ChristianRincon/auto-organize",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "chalk": "^5.6.2"
   }
