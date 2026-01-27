@@ -4,7 +4,11 @@ function renderFoldersSummary(summary) {
   const { foldersByExtensionType, folderWasCreated, previewMode } = summary;
   
   Object.entries(foldersByExtensionType).forEach(([folder, files]) => {
-    console.log(`\n${chalk.green('o ')}${folder}/`);
+    if (previewMode) {
+      console.log(`\n${chalk.blueBright('o ')}${folder}/`);
+    }else{
+      console.log(`\n${chalk.green('o ')}${folder}/`);
+    }
     
     files.forEach(file => {
       const FILE_TAB = 4;
@@ -20,7 +24,7 @@ function renderFoldersSummary(summary) {
 
   if (folderWasCreated && !previewMode) {
     const foldersCreatedTab = 1;
-    console.log(`\n${' '.repeat(foldersCreatedTab)} ${Object.keys(foldersByExtensionType).length} Folder(s) created`);
+    console.log(`\n${' '.repeat(foldersCreatedTab)} ${Object.keys(foldersByExtensionType).length} Folder(s) created\n`);
   }
 }
 
