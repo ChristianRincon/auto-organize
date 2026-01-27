@@ -2,10 +2,17 @@ import path from 'path';
 import { getFilesFromDirectory, ensureDirectoryExists, moveFile } from '../utils/fsHelpers.js';
 import { getFolderNameByExtensionType } from '../rules/byType.js';
 import { shouldSkipFile } from '../utils/filesFilters.js';
+import { renderEmptyFolderText } from '../cli/renderEmptyFolderText.js';
 
 function organizeDirectory(baseDir, cliFlags = {}) {
   try{
     const files = getFilesFromDirectory(baseDir);
+    const fileIsEmpty = files.length === 0;
+
+    if(fileIsEmpty){
+      renderEmptyFolderText();
+      return null;
+    }
 
     const outputFoldersSummary = {};
     let folderByExtensionTypeCreated = false;

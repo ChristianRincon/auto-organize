@@ -4,19 +4,18 @@ function renderBanners(cliFlags) {
   const currentDir = process.cwd();
 
   const scannedDirectoryText = 'SCANNED DIRECTORY';
-  const scannedTextMargin = (currentDir.length - scannedDirectoryText.length) / 2;
+  let textMargin = 0;
 
-  console.log(chalk.yellow("\n" + " ".repeat(scannedTextMargin + 2) + scannedDirectoryText + "\n"));
-  console.log(chalk.yellow("o".repeat(currentDir.length + 8)));
-  console.log(chalk.yellow('|o- ') + currentDir + chalk.yellow(' -o|'));
-  console.log(chalk.yellow("o".repeat(currentDir.length + 8)));
+  if(currentDir.length > scannedDirectoryText.length){
+    textMargin = (currentDir.length - scannedDirectoryText.length) / 2 + 2;
+  }
+
+  console.log(chalk.yellow("\n" + " ".repeat(textMargin) + scannedDirectoryText + "\n"));
+  console.log(chalk.yellow('* ') + currentDir + chalk.yellow(' *'));
 
   if (cliFlags.preview) {
     const previewModeText = 'PREVIEW MODE';
-    const previewTextMargin =
-      (scannedDirectoryText.length - previewModeText.length) / 2;
-
-    console.log("\n" + " ".repeat(scannedTextMargin + previewTextMargin + 1) + chalk.blueBright(previewModeText));
+    console.log("\n" + " ".repeat(textMargin) + chalk.blueBright(previewModeText));
   }
 }
 
