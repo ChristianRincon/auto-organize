@@ -1,8 +1,9 @@
 import path from 'path';
-import { getFilesFromDirectory, ensureDirectoryExists, moveFile } from '../utils/fsHelpers.js';
+import { getFilesFromDirectory, ensureDirectoryExists, fileExists, moveFile } from '../utils/fsHelpers.js';
 import { getFolderNameByExtensionType } from '../rules/byType.js';
 import { shouldSkipFile } from '../utils/filesFilters.js';
 import { renderEmptyFolderText } from '../cli/renderEmptyFolderText.js';
+import chalk from 'chalk';
 
 function organizeDirectory(baseDir, cliFlags = {}) {
   try{
@@ -37,10 +38,14 @@ function organizeDirectory(baseDir, cliFlags = {}) {
 
       if (folderByExtensionTypeWasCreated) folderByExtensionTypeCreated = true;
 
+      if (fileExists(filePathByExtension)){
+        throw new Error(`File collision detected: "${chalk.red(file.name)}" already exists in "${chalk.blueBright(folderNameByExtensionType)}/"`);
+      }
+
       moveFile(file.path, filePathByExtension);
     });
 
-    return {
+    return{
       foldersByExtensionType: outputFoldersSummary,
       folderWasCreated: folderByExtensionTypeCreated,
       previewMode: cliFlags.preview,

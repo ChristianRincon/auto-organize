@@ -26,8 +26,12 @@ function ensureDirectoryExists(dirPath) {
   return false;
 }
 
+function fileExists(filePath) {
+  return fs.existsSync(filePath);
+}
+
 function moveFile(sourcePath, targetPath) {
   fs.renameSync(sourcePath, targetPath);
 }
 
-export { getFilesFromDirectory, ensureDirectoryExists, moveFile };
+export { getFilesFromDirectory, ensureDirectoryExists, fileExists, moveFile };
