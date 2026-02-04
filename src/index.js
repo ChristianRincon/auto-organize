@@ -6,12 +6,13 @@ import { cliActions } from './cli/cliActions.js';
 import { startSpinner } from './cli/spinner.js';
 
 function main() {
+  let spinner;
+  
   try {
     const cliArguments = process.argv.slice(2);
     const cliFlags = parseArgs(cliArguments);
     const availableTypes = getAvailableTypes();
     const currentDir = process.cwd();
-    let spinner;
 
     const cliResult = cliActions(cliFlags, availableTypes);
 

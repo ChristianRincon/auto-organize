@@ -2,6 +2,12 @@
 
 <br>
 
+## [1.2.1] - 2026-02-04
+### Fixed
+- Fixed an error where invalid CLI flags could trigger an internal spinner error instead of a proper validation message.
+
+<br>
+
 ## [1.2.0] - 2026-02-02
 ### Added
 - CLI spinner to provide visual feedback while organizing files.
