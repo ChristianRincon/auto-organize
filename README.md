@@ -77,7 +77,6 @@ Documents/
 Audio/
 Video/
 Archives/
-Others/
 ```
 
 And move files into their corresponding folders.
@@ -92,8 +91,6 @@ song.mp3 -> Audio/
 video.mp4 -> Video/
 
 archive.rar -> Archives/
-
-config.json -> Others/
 ```
 
 <br>
@@ -162,7 +159,6 @@ auto-organize --help
 * archives
 * audio
 * video
-* others
 
 <br>
 
@@ -194,6 +190,6 @@ Contributions are welcome:
 
 ## Author
 
-* LinkedIn: https://www.linkedin.com/in/christian-math%C3%ADas-rinc%C3%B3n-037a90297/
+* LinkedIn: [Christian Mathías Rincón](https://www.linkedin.com/in/christian-math%C3%ADas-rinc%C3%B3n-037a90297/)
 
-* GitHub: https://github.com/ChristianRincon
+* GitHub: [@ChristianRincon](https://github.com/ChristianRincon)
