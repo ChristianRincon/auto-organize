@@ -2,7 +2,7 @@
 
 <br>
 
-## [1.3.1] - 2026-02-08
+## [1.3.0] - 2026-02-08
 ### Added
 - Detection of directories with no supported file types to organize.
 - Clear feedback when no valid files are found.
