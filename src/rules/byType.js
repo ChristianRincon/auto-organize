@@ -8,8 +8,6 @@ const RULES_BY_TYPE = {
   Video: ['.mp4', '.mov', '.avi', '.mkv', '.webm', '.wmv', '.flv']
 };
 
-const DEFAULT_FOLDER_NAME = 'Others';
-
 function getFolderNameByExtensionType(extension) {
   const extensionToLowerCase = extension.toLowerCase();
 
@@ -19,7 +17,7 @@ function getFolderNameByExtensionType(extension) {
     }
   }
 
-  return DEFAULT_FOLDER_NAME;
+  return null;
 }
 
 function getAvailableTypes() {

@@ -76,7 +76,6 @@ Documents/
 Audio/
 Video/
 Archives/
-Others/
 ```
 
 y clasificará los archivos en la carpeta correspondiente.
@@ -91,8 +90,6 @@ canción.mp3 -> Audio/
 video.mp4 -> Video/ 
 
 archivo.rar -> Archives/ 
-
-config.json -> Others/ 
 ```
 
 <br>
@@ -161,7 +158,6 @@ auto-organize --help
 * archives
 * audio
 * video
-* others
 
 <br>
 
@@ -192,7 +188,7 @@ Las contribuciones son bienvenidas. Por favor:
 
 ## Autor
 
-* LinkedIn: https://www.linkedin.com/in/christian-math%C3%ADas-rinc%C3%B3n-037a90297/
+* LinkedIn: [Christian Mathías Rincón](https://www.linkedin.com/in/christian-math%C3%ADas-rinc%C3%B3n-037a90297/)
 
-* GitHub: https://github.com/ChristianRincon
+* GitHub: [@ChristianRincon](https://github.com/ChristianRincon)
 

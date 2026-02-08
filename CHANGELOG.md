@@ -2,6 +2,17 @@
 
 <br>
 
+## [1.3.0] - 2026-02-08
+### Added
+- Detection of directories with no supported file types to organize.
+- Clear feedback when no valid files are found.
+
+### Changed
+- Unsupported file extensions are now ignored instead of being moved to a default folder.
+- The organizer only processes explicitly supported file types.
+
+<br>
+
 ## [1.2.1] - 2026-02-04
 ### Fixed
 - Fixed an error where invalid CLI flags could trigger an internal spinner error instead of a proper validation message.
