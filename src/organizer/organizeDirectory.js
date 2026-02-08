@@ -2,17 +2,20 @@ import path from 'path';
 import { getFilesFromDirectory, ensureDirectoryExists, fileExists, moveFile } from '../utils/fsHelpers.js';
 import { getFolderNameByExtensionType } from '../rules/byType.js';
 import { shouldSkipFile } from '../utils/filesFilters.js';
-import { renderEmptyFolderText } from '../cli/renderEmptyFolderText.js';
 import chalk from 'chalk';
 
 function organizeDirectory(baseDir, cliFlags = {}) {
+  
+  let validFilesFound = false;
+
   try{
     const files = getFilesFromDirectory(baseDir);
-    const fileIsEmpty = files.length === 0;
+    const noFilesFound = files.length === 0;
 
-    if(fileIsEmpty){
-      renderEmptyFolderText();
-      return null;
+    if(noFilesFound){
+      return{
+        isEmpty: true
+      }
     }
 
     const outputFoldersSummary = {};
@@ -22,7 +25,11 @@ function organizeDirectory(baseDir, cliFlags = {}) {
       const fileExtension = path.extname(file.name);
       const folderNameByExtensionType = getFolderNameByExtensionType(fileExtension);
 
+      if (!folderNameByExtensionType) return;
+
       if (shouldSkipFile(folderNameByExtensionType, cliFlags)) return;
+
+      validFilesFound = true;
 
       if (!outputFoldersSummary[folderNameByExtensionType]) {
         outputFoldersSummary[folderNameByExtensionType] = [];
@@ -43,12 +50,14 @@ function organizeDirectory(baseDir, cliFlags = {}) {
       }
 
       moveFile(file.path, filePathByExtension);
+
     });
 
     return{
       foldersByExtensionType: outputFoldersSummary,
       folderWasCreated: folderByExtensionTypeCreated,
       previewMode: cliFlags.preview,
+      isEmpty: !validFilesFound
     };
   } 
   catch(error){

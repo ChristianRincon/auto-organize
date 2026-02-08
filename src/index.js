@@ -1,5 +1,6 @@
 import { organizeDirectory } from './organizer/organizeDirectory.js';
 import { renderFoldersSummary } from './cli/renderSummary.js';
+import { renderEmptyFolderText } from './cli/renderEmptyFolderText.js';
 import { parseArgs } from './utils/parseArgs.js';
 import { getAvailableTypes } from './rules/byType.js';
 import { cliActions } from './cli/cliActions.js';
@@ -23,7 +24,8 @@ function main() {
     spinner = startSpinner('Organizing files...');
     const summary = organizeDirectory(currentDir, cliFlags);
 
-    if(!summary){
+    if(summary.isEmpty){
+      renderEmptyFolderText();
       spinner.stop();
       return;
     } 
