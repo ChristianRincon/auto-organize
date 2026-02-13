@@ -95,8 +95,12 @@ video.mp4 -> Video/
 
 archivo.rar -> Archives/ 
 ```
-
 <br>
+
+> **Ejemplo**
+
+![auto-organize example](assets/auto-organize_example_spanish.gif)
+
 
 ## Modo simulación (preview)
 
