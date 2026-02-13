@@ -64,13 +64,13 @@ npm install -g auto-organize
 Navigate to any directory on your system. For example:
 
 ```bash
-cd /users/downloads
+cd /Users/Downloads
 ```
 
 Then run:
 
 ```bash
-auto-organize
+auto-organize || npx auto-organize
 ```
 
 Depending on the files present, it will create folders such as:
@@ -96,6 +96,11 @@ video.mp4 -> Video/
 
 archive.rar -> Archives/
 ```
+<br>
+
+> **Example**
+
+![auto-organize example](assets/auto-organize_example.gif)
 
 <br>
 
