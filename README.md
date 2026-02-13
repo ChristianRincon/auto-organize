@@ -1,10 +1,8 @@
 ![Auto Organize CLI Banner](assets/banner.png)
 
-<center>
-    <img src= "https://img.shields.io/npm/v/auto-organize?logo=npm&style=plastic">
-    <img src= "https://img.shields.io/npm/dw/auto-organize?style=plastic">
-    <img src= "https://img.shields.io/npm/last-update/auto-organize?style=plastic&color=yellow">
-</center>
+![NPM Version](https://img.shields.io/npm/v/auto-organize?logo=npm&style=plastic)
+![NPM Downloads](https://img.shields.io/npm/dw/auto-organize?style=plastic)
+![NPM Last Update](https://img.shields.io/npm/last-update/auto-organize?style=plastic&color=yellow)
 
 <br>
 
