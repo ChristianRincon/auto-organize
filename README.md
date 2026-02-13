@@ -154,7 +154,7 @@ auto-organize --exclude archives
 Display the help guide and available types.
 
 ```bash
-auto-organize --help
+auto-organize --help || auto-organize -h
 ```
 
 <br>

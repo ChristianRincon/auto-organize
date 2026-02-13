@@ -69,7 +69,7 @@ cd /users/descargas
 y ejecuta:
 
 ```bash
-auto-organize
+auto-organize || npx auto-organize
 ```
 
 Esto, dependiendo del tipo de archivos presentes, creará carpetas como:
@@ -107,7 +107,7 @@ archivo.rar -> Archives/
 Antes de ejecutar cambios reales, se puede previsualizar si la clasificación es correcta:
 
 ```bash
-auto-organize --preview
+auto-organize --preview || auto-organize -p
 ```
 
 Salida de ejemplo:
@@ -124,6 +124,9 @@ Audio/
 ```
 
 <br>
+
+> **Ejemplo**
+![]()
 
 ## Configuraciones disponibles (flags)
 
@@ -152,7 +155,7 @@ auto-organize --exclude archives
 Muestra una guía completa y los tipos disponibles.
 
 ```bash
-auto-organize --help
+auto-organize --help || auto-organize -h
 ```
 
 <br>
