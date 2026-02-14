@@ -6,6 +6,9 @@
   "bin": {
     "auto-organize": "./bin/auto-organize.js"
   },
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
   "type": "module",
   "files": [
     "bin",
