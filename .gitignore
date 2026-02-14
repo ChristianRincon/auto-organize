@@ -20,5 +20,3 @@ Thumbs.db
 # Build / temp
 dist/
 
-#npmrc
-.npmrc  
