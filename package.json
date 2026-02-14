@@ -1,6 +1,6 @@
 {
   "name": "auto-organize",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "CLI tool to organize files in a directory based on their file types.",
   "main": "./bin/auto-organize.js",
   "bin": {
@@ -49,6 +49,6 @@
     "ora": "^9.1.0"
   },
   "publishConfig": {
-  "@ChristianRincon:registry": "https://npm.pkg.github.com"
-}
+    "@ChristianRincon:registry": "https://npm.pkg.github.com"
+  }
 }
