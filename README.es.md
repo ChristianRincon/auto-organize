@@ -60,10 +60,10 @@ npm install -g auto-organize
 
 ## Uso básico
 
-Ubicate en cualquier carpeta del sistema. Por ejemplo '/descargas'
+Ubicate en cualquier carpeta del sistema. Por ejemplo:
 
 ```bash
-cd /users/descargas
+cd /Users/Descargas
 ```
 
 y ejecuta:
@@ -98,8 +98,7 @@ archivo.rar -> Archives/
 <br>
 
 > **Ejemplo**
-
-![auto-organize example](assets/auto-organize_example_spanish.gif)
+![auto-organize example](assets/spanish/auto-organize_example_spanish.gif)
 
 
 ## Modo simulación (preview)
@@ -125,8 +124,8 @@ Audio/
 
 <br>
 
-> **Ejemplo**
-![]()
+> **Ejemplo** 
+![auto-organize preview example](assets/spanish/auto-organize_example_preview_spanish.gif)
 
 ## Configuraciones disponibles (flags)
 

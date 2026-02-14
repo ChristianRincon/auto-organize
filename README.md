@@ -99,8 +99,7 @@ archive.rar -> Archives/
 <br>
 
 > **Example**
-
-![auto-organize example](assets/auto-organize_example.gif)
+![auto-organize example](assets/english/auto-organize_example.gif)
 
 <br>
 
@@ -109,7 +108,7 @@ archive.rar -> Archives/
 Preview the organization before applying real changes:
 
 ```bash
-auto-organize --preview
+auto-organize --preview || auto-organize -p
 ```
 
 Example output:
@@ -126,6 +125,10 @@ Audio/
 ```
 
 <br>
+
+> **Example** 
+![auto-organize preview example](assets/english/auto-organize_example_preview_english.gif)
+
 
 ## Available Flags
 
