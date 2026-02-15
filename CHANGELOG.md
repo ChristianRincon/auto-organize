@@ -2,6 +2,13 @@
 
 <br>
 
+## [1.4.1] - 2026-02-15
+### Added
+- New `Code` category to organize source code and development-related files.
+- Support for multiple programming, scripting, markup, and configuration file extensions.
+
+<br>
+
 ## [1.3.0] - 2026-02-08
 ### Added
 - Detection of directories with no supported file types to organize.
