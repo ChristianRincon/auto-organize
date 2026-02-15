@@ -171,6 +171,7 @@ auto-organize --help || auto-organize -h
 * archives
 * audio
 * video
+* code
 
 <br>
 
