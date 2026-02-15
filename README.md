@@ -99,7 +99,8 @@ archive.rar -> Archives/
 <br>
 
 > **Example**
-![auto-organize example](assets/english/auto-organize_example.gif)
+
+![auto-organize example](assets/english/auto-organize_example_english.gif)
 
 <br>
 
