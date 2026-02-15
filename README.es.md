@@ -98,6 +98,7 @@ archivo.rar -> Archives/
 <br>
 
 > **Ejemplo**
+
 ![auto-organize example](assets/spanish/auto-organize_example_spanish.gif)
 
 
