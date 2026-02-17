@@ -128,6 +128,7 @@ Audio/
 <br>
 
 > **Example** 
+
 ![auto-organize preview example](assets/english/auto-organize_example_preview_english.gif)
 
 
