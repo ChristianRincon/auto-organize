@@ -126,6 +126,7 @@ Audio/
 <br>
 
 > **Ejemplo** 
+
 ![auto-organize preview example](assets/spanish/auto-organize_example_preview_spanish.gif)
 
 ## Configuraciones disponibles (flags)
