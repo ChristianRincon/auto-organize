@@ -77,8 +77,8 @@ Esto, dependiendo del tipo de archivos presentes, creará carpetas como:
 ```txt
 Images/
 Documents/
-Audio/
-Video/
+Audios/
+Videos/
 Archives/
 ```
 
@@ -89,9 +89,9 @@ foto.jpg -> Images/
 
 documento.pdf -> Documents/ 
 
-canción.mp3 -> Audio/ 
+canción.mp3 -> Audios/ 
 
-video.mp4 -> Video/ 
+video.mp4 -> Videos/ 
 
 archivo.rar -> Archives/ 
 ```
@@ -119,7 +119,7 @@ Images/
 Documents/
     contrato.pdf
 
-Audio/
+Audios/
     cancion.mp3
 ```
 
@@ -133,20 +133,28 @@ Audio/
 
 ### `--only <type>`
 
-Organiza **solo** un tipo específico de archivo.
+Organiza **solo los tipos de archivos indicados** (si es más de un tipo, se deben separar los tipos con coma)
 
 ```bash
 auto-organize --only images
+```
+
+```bash
+auto-organize --only images,videos
 ```
 
 ---
 
 ### `--exclude <type>`
 
-Excluye un tipo de archivo de la organización.
+**Excluye los tipos de archivos indicados** (si es más de un tipo, se deben separar los tipos con coma)
 
 ```bash
 auto-organize --exclude archives
+```
+
+```bash
+auto-organize --exclude archives,documents
 ```
 
 ---
@@ -168,9 +176,9 @@ auto-organize --help || auto-organize -h
 * spreadsheets
 * presentations
 * archives
-* audio
-* video
-* code
+* audios
+* videos
+* codes
 
 <br>
 
