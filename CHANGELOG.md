@@ -2,6 +2,18 @@
 
 <br>
 
+## [1.5.0] - 2026-02-26
+
+### Added
+- Support for multiple types in `--only` and `--exclude` flags.
+- Flexible parsing of comma separated types.
+
+### Changed
+- All type categories are now pluralized.
+- Help menu updated to reflect multi-type usage.
+
+<br>
+
 ## [1.4.1] - 2026-02-15
 ### Added
 - New `Code` category to organize source code and development-related files.
