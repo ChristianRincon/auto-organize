@@ -78,8 +78,8 @@ Depending on the files present, it will create folders such as:
 ```txt
 Images/
 Documents/
-Audio/
-Video/
+Audios/
+Videos/
 Archives/
 ```
 
@@ -90,9 +90,9 @@ photo.jpg -> Images/
 
 document.pdf -> Documents/
 
-song.mp3 -> Audio/
+song.mp3 -> Audios/
 
-video.mp4 -> Video/
+video.mp4 -> Videos/
 
 archive.rar -> Archives/
 ```
@@ -121,7 +121,7 @@ Images/
 Documents/
     contract.pdf 
 
-Audio/    
+Audios/    
     song.mp3
 ```
 
@@ -136,20 +136,28 @@ Audio/
 
 ### `--only <type>`
 
-Organize **only** a specific file type.
+Organize **only the specified file types** (if there is more than one type, separate the types with a comma).
 
 ```bash
 auto-organize --only images
+```
+
+```bash
+auto-organize --only images,videos
 ```
 
 ---
 
 ### `--exclude <type>`
 
-Exclude a specific file type from organization.
+**Excludes the specified file types** (if there is more than one type, separate the types with a comma)
 
 ```bash
 auto-organize --exclude archives
+```
+
+```bash
+auto-organize --exclude archives,documents
 ```
 
 ---
@@ -171,9 +179,9 @@ auto-organize --help || auto-organize -h
 * spreadsheets
 * presentations
 * archives
-* audio
-* video
-* code
+* audios
+* videos
+* codes
 
 <br>
 

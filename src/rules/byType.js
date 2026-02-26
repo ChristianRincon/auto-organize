@@ -4,9 +4,9 @@ const RULES_BY_TYPE = {
   Spreadsheets: ['.xls', '.xlsx', '.csv', '.ods', '.tsv', '.xlsm', '.xltx', '.xltm', '.xlsb', '.xlam', '.xla', '.xlw', '.xlc', '.xlt'],
   Presentations: ['.ppt', '.pptx', '.odp', '.key', '.ppsx', '.potx', '.pptm', '.ppsm', '.potm', '.pps', '.pot', '.ppa', '.thmx', '.sldx', '.sldm'],
   Archives: ['.zip', '.rar', '.7z', '.tar', '.gz', '.bz2', '.xz', '.tgz', '.tbz2'],
-  Audio: ['.mp3', '.wav', '.ogg', '.flac', '.aac', '.m4a'],
-  Video: ['.mp4', '.mov', '.avi', '.mkv', '.webm', '.wmv', '.flv'],
-  Code: ['.js', '.ts', '.jsx', '.tsx', '.py', '.java', '.cpp', '.c', '.h', '.hpp', '.cs', '.php', '.rb', '.go', '.rs', '.kotlin', '.swift', '.scala', '.m', '.mm', '.pl', '.sh', '.bash', '.zsh', '.fish', '.ps1', '.bat', '.cmd', '.html', '.htm', '.css', '.scss', '.sass', '.less', '.json', '.jsonc', '.xml', '.yaml', '.yml', '.toml', '.ini', '.cfg', '.conf', '.sql', '.r', '.lua', '.dart', '.clj', '.cljs', '.ex', '.exs', '.erl', '.hrl', '.vim', '.gradle', '.maven', '.cmake', '.makefile', '.dockerfile'],
+  Audios: ['.mp3', '.wav', '.ogg', '.flac', '.aac', '.m4a'],
+  Videos: ['.mp4', '.mov', '.avi', '.mkv', '.webm', '.wmv', '.flv'],
+  Codes: ['.js', '.ts', '.jsx', '.tsx', '.py', '.java', '.cpp', '.c', '.h', '.hpp', '.cs', '.php', '.rb', '.go', '.rs', '.kotlin', '.swift', '.scala', '.m', '.mm', '.pl', '.sh', '.bash', '.zsh', '.fish', '.ps1', '.bat', '.cmd', '.html', '.htm', '.css', '.scss', '.sass', '.less', '.json', '.jsonc', '.xml', '.yaml', '.yml', '.toml', '.ini', '.cfg', '.conf', '.sql', '.r', '.lua', '.dart', '.clj', '.cljs', '.ex', '.exs', '.erl', '.hrl', '.vim', '.gradle', '.maven', '.cmake', '.makefile', '.dockerfile'],
 };
 
 function getFolderNameByExtensionType(extension) {

@@ -2,8 +2,8 @@ function shouldSkipFile(folder, cliFlags) {
   const { only, exclude } = cliFlags;
   const normalizedFolder = folder.toLowerCase();
 
-  if (only && normalizedFolder !== only.toLowerCase()) return true;
-  if (exclude && normalizedFolder === exclude.toLowerCase()) return true;
+  if (only && !only.includes(normalizedFolder)) return true;
+  if (exclude && exclude.includes(normalizedFolder)) return true;
   
   return false;
 }

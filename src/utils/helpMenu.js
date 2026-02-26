@@ -8,20 +8,28 @@ function showHelp(availableTypes) {
       auto-organize [${chalk.green('options')}]
 
     Options:
-      ${chalk.green('--preview,  -p')}           Show a preview without making changes
-      ${chalk.green('--only,     -o <type>')}    Organize only a specific file type
-      ${chalk.green('--exclude,  -e <type>')}    Exclude a file type from organization
-      ${chalk.green('--help,     -h')}           Show this help message
+      ${chalk.green('--preview,  -p')}             Show a preview without making changes
+      ${chalk.green('--only,     -o <type(s)>')}   Organize only specific file types
+      ${chalk.green('--exclude,  -e <type(s)>')}   Exclude specific file types
+      ${chalk.green('--help,     -h')}             Show this help message
+
+    ${chalk.yellow('Multiple types can be separated by commas')}
 
     Available types:
       ${chalk.yellow(availableTypes.join(', '))}
 
     Examples:
-      auto-organize ${chalk.green('--preview')} || auto-organize ${chalk.green('-p')}
 
-      auto-organize ${chalk.green('--only')} ${chalk.yellow('images')} || auto-organize ${chalk.green('-o')} ${chalk.yellow('images')}
-      
-      auto-organize ${chalk.green('--exclude')} ${chalk.yellow('archives')} || auto-organize ${chalk.green('-e')} ${chalk.yellow('archives')}
+      ${chalk.blueBright('Preview')}:
+        auto-organize ${chalk.green('--preview')} || auto-organize ${chalk.green('-p')}
+
+      ${chalk.blueBright('Only')}:
+        auto-organize ${chalk.green('--only')} ${chalk.yellow('images')} || auto-organize ${chalk.green('-o')} ${chalk.yellow('images')}
+        auto-organize ${chalk.green('--only')} ${chalk.yellow('images,videos')} || auto-organize ${chalk.green('-o')} ${chalk.yellow('images,videos')}
+        
+      ${chalk.blueBright('Exclude')}:
+        auto-organize ${chalk.green('--exclude')} ${chalk.yellow('archives')} || auto-organize ${chalk.green('-e')} ${chalk.yellow('archives')}
+        auto-organize ${chalk.green('--exclude')} ${chalk.yellow('archives,documents')} || auto-organize ${chalk.green('-e')} ${chalk.yellow('archives,documents')}
   `);
 }
 
