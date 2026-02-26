@@ -1,5 +1,30 @@
 import chalk from "chalk";
 
+function collectParsedTypes(cliArguments, startIndex, flagName) {
+  const typesCollected = [];
+  let currentIndex = startIndex;
+
+  while (currentIndex < cliArguments.length && !cliArguments[currentIndex].startsWith('-')) {
+    typesCollected.push(cliArguments[currentIndex]);
+    currentIndex++;
+  }
+
+  if (typesCollected.length === 0) {
+    throw new Error(chalk.red(`\n${flagName} requires at least one valid type.`));
+  }
+
+  const parsedTypes = typesCollected
+    .join(' ')
+    .split(',')
+    .map(type => type.trim().toLowerCase())
+    .filter(Boolean);
+
+  return {
+    types: parsedTypes,
+    newIndex: currentIndex - 1
+  };
+}
+
 function parseArgs(cliArguments) {
   const cliFlags = {
     preview: false,
@@ -40,28 +65,17 @@ function parseArgs(cliArguments) {
       continue;
     }
 
-
     if (cliArgument === '--only' || cliArgument === '-o') {
-      const onlyFlagArgument = cliArguments[i + 1];
-
-      if (!onlyFlagArgument || onlyFlagArgument.startsWith('-')) {
-        throw new Error(chalk.red(`\n--only requires a valid type.`));
-      }
-
-      cliFlags.only = onlyFlagArgument.toLowerCase();
-      i++;
+      const { types, newIndex } = collectParsedTypes(cliArguments, i + 1, '--only');
+      cliFlags.only = types;
+      i = newIndex;
       continue;
     }
 
     if (cliArgument === '--exclude' || cliArgument === '-e') {
-      const excludeFlagArgument = cliArguments[i + 1];
-
-      if (!excludeFlagArgument || excludeFlagArgument.startsWith('-')) {
-        throw new Error(chalk.red(`\n--exclude requires a valid type.`));
-      }
-
-      cliFlags.exclude = excludeFlagArgument.toLowerCase();
-      i++;
+      const { types, newIndex } = collectParsedTypes(cliArguments, i + 1, '--exclude');
+      cliFlags.exclude = types;
+      i = newIndex;
       continue;
     }
   }

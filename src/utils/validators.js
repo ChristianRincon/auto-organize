@@ -15,18 +15,26 @@ function validateTypes(availableTypes) {
 function validateFlagsAndTypes(cliFlags, availableTypes) {
   const { only, exclude } = cliFlags;
 
-  if (only && !availableTypes.includes(only)) {
-    throw new Error(
-      `'${chalk.red(only)}' is not a valid type for ${chalk.green('--only')}\n` +
-      `Valid types: ${chalk.yellow(availableTypes.join(', '))}`
-    );
+  if (only) {
+    only.forEach(type => {
+      if (!availableTypes.includes(type)) {
+        throw new Error(
+          `'${chalk.red(type)}' is not a valid type for ${chalk.green('--only')}\n` +
+          `Valid types: ${chalk.yellow(availableTypes.join(', '))}`
+        );
+      }
+    });
   }
 
-  if (exclude && !availableTypes.includes(exclude)) {
-    throw new Error(
-      `'${chalk.red(exclude)}' is not a valid type for ${chalk.green('--exclude')}\n` +
-      `Valid types: ${chalk.yellow(availableTypes.join(', '))}`
-    );
+  if (exclude) {
+    exclude.forEach(type => {
+      if (!availableTypes.includes(type)) {
+        throw new Error(
+          `'${chalk.red(type)}' is not a valid type for ${chalk.green('--exclude')}\n` +
+          `Valid types: ${chalk.yellow(availableTypes.join(', '))}`
+        );
+      }
+    });
   }
 }
 
