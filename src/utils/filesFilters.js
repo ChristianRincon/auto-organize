@@ -1,4 +1,4 @@
-function shouldSkipFile(folder, cliFlags) {
+function shouldSkipFile(folder, cliFlags = {}) {
   const { only, exclude } = cliFlags;
   const normalizedFolder = folder.toLowerCase();
 
