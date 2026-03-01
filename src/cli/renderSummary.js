@@ -12,12 +12,12 @@ function renderFoldersSummary(summary) {
     
     files.forEach(file => {
       const FILE_TAB = 4;
-      const line = `${' '.repeat(FILE_TAB)}• ${file}`;
+      const fileName = `${' '.repeat(FILE_TAB)}• ${file}`;
       
       if (previewMode) {
-        console.log(chalk.blueBright(line));
+        console.log(chalk.blueBright(fileName));
       } else {
-        console.log(chalk.greenBright(line));
+        console.log(chalk.greenBright(fileName));
       }
     });
   });
